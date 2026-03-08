@@ -1,5 +1,5 @@
 import React from 'react';
-import CardStackAnimation from '../animations/CardStackAnimation';
+import CardStackAnimation from '../Animations/CardStackAnimation';
 import './ApproachSection.css';
 
 // Import images for the card stack
