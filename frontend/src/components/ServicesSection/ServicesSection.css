@@ -1,5 +1,5 @@
 .services-section {
-  padding: 120px 40px;
+  padding: 40px 40px 120px; /* Reduced top padding */
   background-color: #ffffff;
   display: flex;
   justify-content: center;
@@ -53,7 +53,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0 120px; /* Increased empty space between columns */
-  margin-top: 40px; /* Reduced vertical gap to 40px */
+  margin-top: 60px; /* Increased from 40px for better balance with large text */
   margin-bottom: 80px;
   position: relative;
 }
