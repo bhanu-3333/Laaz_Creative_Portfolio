@@ -1,9 +1,10 @@
 .home-page {
   display: flex;
-  height: 100vh;
+  height: 100vh; /* Fixed height for one-screen view */
   width: 100vw;
-  overflow: hidden;
+  overflow: hidden; /* Contain the animation */
   background-color: #ffffff;
+  position: relative;
 }
 
 .hero-section-wrapper {
