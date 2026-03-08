@@ -16,11 +16,85 @@
   height: 100%;
 }
 
+/* Hero Section Styles (Consolidated) */
+.hero-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px;
+  background-color: #ffffff;
+}
+
+.hero-content {
+  max-width: 650px;
+  /* Increased from 500px to allow larger logo */
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  /* Zero gap, using margin for control */
+}
+
+.logo-wrapper {
+  width: 100%;
+}
+
+.logo-image {
+  width: 100%;
+  max-width: 650px;
+  /* Increased logo size */
+  height: auto;
+  display: block;
+}
+
+.button-wrapper {
+  margin-top: -30px;
+  /* Pull button up significantly to counteract logo whitespace */
+  display: flex;
+  justify-content: flex-start;
+}
+
+.contact-button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  border: 1px solid #1a1a1a;
+  padding: 16px 32px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #1a1a1a;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  margin-top: 70px;
+  margin-left: 50px;
+}
+
+.contact-button:hover {
+  background: #1a1a1a;
+  color: #ffffff;
+}
+
+.button-arrow {
+  width: 18px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.contact-button:hover .button-arrow {
+  transform: translate(3px, -3px);
+}
+
 @media (max-width: 768px) {
   .home-page {
     flex-direction: column;
     height: auto;
     overflow-y: auto;
+    overflow-x: hidden;
   }
 
   .hero-section-wrapper,
@@ -30,10 +104,40 @@
   }
 
   .hero-section-wrapper {
-    min-height: 80vh;
+    min-height: auto;
+    padding-bottom: 60px;
   }
 
   .animation-section-wrapper {
-    height: 500px;
+    height: 500px; /* Specific height for animation on mobile */
+  }
+
+  .hero-container {
+    padding: 60px 24px;
+    height: auto;
+    align-items: center;
+  }
+  
+  .hero-content {
+    align-items: center;
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .logo-image {
+    max-width: 280px; /* Scaled down for mobile */
+  }
+
+  .button-wrapper {
+    margin-top: 40px;
+    margin-left: 0; /* Center the button */
+    justify-content: center;
+    width: 100%;
+  }
+
+  .contact-button {
+    margin-left: 0; /* Clear desktop margin */
+    padding: 14px 28px;
+    font-size: 16px;
   }
 }
