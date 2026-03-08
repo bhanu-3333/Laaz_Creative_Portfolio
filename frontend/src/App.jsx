@@ -5,6 +5,8 @@ import ApproachSection from './components/ApproachSection/ApproachSection';
 import ScrollingBanner from './components/ScrollingBanner/ScrollingBanner';
 import ServicesSection from './components/ServicesSection/ServicesSection';
 import PortfolioSection from './components/PortfolioSection/PortfolioSection';
+import DistinctiveSection from './components/DistinctiveSection/DistinctiveSection';
+import Footer from './components/Footer/Footer';
 import './App.css';
 
 function App() {
@@ -16,6 +18,8 @@ function App() {
       <ScrollingBanner />
       <ServicesSection />
       <PortfolioSection />
+      <DistinctiveSection />
+      <Footer />
     </div>
   );
 }
