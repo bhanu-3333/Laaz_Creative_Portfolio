@@ -1,0 +1,124 @@
+.distinctive-section {
+  padding: 100px 40px;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.distinctive-container {
+  max-width: 1400px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+/* Left Side - Content */
+.distinctive-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.distinctive-heading {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(36px, 4.5vw, 64px); /* Decreased from 48px-84px */
+  line-height: 1.1;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 25px;
+}
+
+.distinctive-accent {
+  color: #422D28;
+}
+
+.distinctive-description {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 400;
+  font-size: 18px; /* Decreased from 20px */
+  line-height: 1.6;
+  color: #333333;
+  max-width: 500px;
+  margin-bottom: 35px;
+}
+
+.distinctive-btn {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background-color: transparent;
+  border: 1px solid #000000;
+  padding: 18px 40px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: #000000;
+  cursor: pointer;
+  width: fit-content;
+  transition: all 0.3s ease;
+  border-radius: 0;
+  text-transform: uppercase;
+}
+
+.distinctive-btn:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.distinctive-btn:hover .btn-arrow {
+  filter: invert(1);
+}
+
+.btn-arrow {
+  width: 18px;
+  height: auto;
+}
+
+/* Right Side - Image */
+.distinctive-image-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.distinctive-img {
+  width: 90%; /* Added width limit */
+  height: auto;
+  max-height: 550px; /* Decreased from 800px */
+  object-fit: cover;
+  display: block;
+  border-radius: 0;
+}
+
+/* Responsive Scaling */
+@media (max-width: 1024px) {
+  .distinctive-container {
+    gap: 40px;
+  }
+  
+  .distinctive-heading {
+    font-size: 48px;
+  }
+}
+
+@media (max-width: 768px) {
+  .distinctive-section {
+    padding: 60px 20px;
+  }
+  
+  .distinctive-container {
+    grid-template-columns: 1fr;
+    text-align: left;
+  }
+
+  .distinctive-content {
+    align-items: flex-start;
+  }
+  
+  .distinctive-description {
+    width: 100%;
+  }
+}
