@@ -84,8 +84,8 @@ const PortfolioSection = () => {
         const movement = scrolledIntoSection * 1.0;
         
         // Target landing position centered in the 250px gap
-        // Calculated: 150px margin + 350px image height + (250px gap / 2) - (~75px offset adjustment) = ~550px
-        setOffset(Math.min(movement, 550));
+        // Calculated: 150px margin + 350px image height + (250px gap / 2) - (~75px offset adjustment) -> Adjusted to 620 for lower landing
+        setOffset(Math.min(movement, 620));
       } else {
         // Step 1: Stay fixed at the top position when entering (offset 0)
         setOffset(0);
