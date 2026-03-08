@@ -1,16 +1,16 @@
 .scrolling-banner-section {
   width: 100%;
   overflow: hidden;
-  padding: 120px 0;
+  padding: 80px 0;
   display: flex;
   flex-direction: column;
-  gap: 50px; /* Increased gap for clear separation */
+  gap: 60px; /* Increased gap for clear separation between titled scrollers */
   background-color: #ffffff;
 }
 
 .banner-wrapper {
-  width: 120%; /* Slightly wider to cover edges when tilted */
-  margin-left: -10%;
+  width: 140%; /* Wider for safe rotation */
+  margin-left: -20%;
   height: 80px;
   display: flex;
   align-items: center;
@@ -38,6 +38,9 @@
   align-items: center;
   white-space: nowrap;
   width: max-content;
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 .banner-group {
@@ -52,6 +55,8 @@
   letter-spacing: 2px;
   margin: 0 40px;
   text-transform: uppercase;
+  /* Fix blurring on some browsers */
+  transform: translateZ(0); 
 }
 
 .top-banner .banner-text {
@@ -80,11 +85,11 @@
 }
 
 .scroll-left {
-  animation: scrollLeft 30s linear infinite;
+  animation: scrollLeft 60s linear infinite; /* Slower speed */
 }
 
 .scroll-right {
-  animation: scrollRight 30s linear infinite;
+  animation: scrollRight 60s linear infinite; /* Slower speed */
 }
 
 @media (max-width: 768px) {
