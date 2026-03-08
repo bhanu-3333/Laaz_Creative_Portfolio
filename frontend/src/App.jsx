@@ -3,6 +3,7 @@ import Home from './pages/Home/Home';
 import GrowthSection from './components/GrowthSection/GrowthSection';
 import ApproachSection from './components/ApproachSection/ApproachSection';
 import ScrollingBanner from './components/ScrollingBanner/ScrollingBanner';
+import ServicesSection from './components/ServicesSection/ServicesSection';
 import './App.css';
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
       <GrowthSection />
       <ApproachSection />
       <ScrollingBanner />
+      <ServicesSection />
     </div>
   );
 }
