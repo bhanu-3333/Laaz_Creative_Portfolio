@@ -1,5 +1,5 @@
 .approach-section {
-  padding: 100px 40px;
+  padding: 60px 40px 100px; /* Increased top padding */
   background-color: #ffffff;
   display: flex;
   justify-content: center;
