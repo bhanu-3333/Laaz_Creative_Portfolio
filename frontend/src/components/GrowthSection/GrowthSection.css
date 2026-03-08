@@ -85,9 +85,13 @@
 }
 
 @media (max-width: 768px) {
+  .growth-section-container {
+    padding: 60px 20px;
+  }
+
   .growth-card {
-    min-height: 500px;
-    padding: 60px 20px 80px;
+    min-height: 600px;
+    padding: 40px 20px;
     max-width: 100%;
   }
 
