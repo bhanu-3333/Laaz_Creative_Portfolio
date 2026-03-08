@@ -1,7 +1,8 @@
 import React from 'react';
 import './Home.css';
-import HeroSection from '../../components/HeroSection/HeroSection';
 import FloatingImages from '../../components/Animations/FloatingImages';
+import logo from '../../assets/logo.png';
+import arrowIcon from '../../assets/arrow.png';
 
 // Import images
 import img1 from '../../assets/images/image 1 .png';
@@ -19,7 +20,19 @@ const Home = () => {
   return (
     <div className="home-page">
       <section className="hero-section-wrapper">
-        <HeroSection />
+        <div className="hero-container">
+          <div className="hero-content">
+            <div className="logo-wrapper">
+              <img src={logo} alt="Laaz Creative Logo" className="logo-image" />
+            </div>
+            
+            <div className="button-wrapper">
+              <button className="contact-button">
+                Contact us <img src={arrowIcon} alt="arrow" className="button-arrow" />
+              </button>
+            </div>
+          </div>
+        </div>
       </section>
       
       <section className="animation-section-wrapper">
