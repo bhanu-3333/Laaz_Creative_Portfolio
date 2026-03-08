@@ -1,5 +1,5 @@
 .growth-section-container {
-  padding: 80px 40px;
+  padding: 80px 40px 60px; /* Increased bottom padding */
   background-color: #ffffff;
   display: flex;
   justify-content: center;
