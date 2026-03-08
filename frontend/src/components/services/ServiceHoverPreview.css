@@ -1,0 +1,32 @@
+.service-hover-preview-container {
+  position: fixed;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-20px) scale(0.95);
+  width: 400px;
+  height: 250px;
+  z-index: 1000;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.service-hover-preview-container.visible {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0) scale(1);
+}
+
+.preview-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .service-hover-preview-container {
+    display: none; /* Hide on mobile to avoid clutter */
+  }
+}
