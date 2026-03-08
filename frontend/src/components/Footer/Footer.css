@@ -1,0 +1,139 @@
+.footer {
+  padding: 100px 40px 40px;
+  background-color: #ffffff;
+}
+
+.footer-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 100px;
+  margin-bottom: 100px;
+  align-items: start;
+}
+
+/* Left Column - Brand */
+.footer-logo-img {
+  width: 100%;
+  max-width: 700px;
+  height: auto;
+  display: block;
+}
+
+/* Common Headings */
+.footer-heading {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 40px;
+}
+
+/* Middle Column - Links */
+.footer-links-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links-list li {
+  margin-bottom: 25px;
+}
+
+.footer-links-list a {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #333333;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 150px;
+  transition: all 0.3s ease;
+}
+
+.footer-links-list a span {
+  font-size: 20px;
+  margin-top: -2px;
+}
+
+.footer-links-list a:hover {
+  color: #000000;
+  transform: translateX(5px);
+}
+
+/* Right Column - Contact */
+.footer-contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-link {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 18px;
+  color: #333333;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-link:hover {
+  color: #000000;
+}
+
+.contact-item {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 18px;
+  color: #333333;
+}
+
+/* Bottom Copyright */
+.footer-bottom {
+  border-top: 1px solid #eeeeee;
+  padding-top: 40px;
+  text-align: center;
+}
+
+.footer-bottom p {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 16px;
+  color: #333333;
+  font-weight: 400;
+}
+
+/* Responsiveness */
+@media (max-width: 1100px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+  }
+  
+  .footer-brand {
+    grid-column: span 2;
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 60px 20px 40px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .footer-brand {
+    grid-column: span 1;
+  }
+
+  .footer-logo-img {
+    max-width: 300px;
+  }
+}
