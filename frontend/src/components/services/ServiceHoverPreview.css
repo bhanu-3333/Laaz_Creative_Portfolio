@@ -1,28 +1,33 @@
 .service-hover-preview-container {
   position: fixed;
-  top: 50px;
-  left: 50%;
-  transform: translateX(-50%) translateY(-20px) scale(0.95);
-  width: 400px;
-  height: 250px;
+  transform: translate(20px, -50%) scale(0.85); /* Offset from cursor and initial scale */
+  transform-origin: center left;
+  max-width: 320px;
+  max-height: 220px;
   z-index: 1000;
   pointer-events: none;
   opacity: 0;
   transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  border-radius: 4px; /* Matches the brand aesthetic */
+  overflow: visible; /* Show the full image */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .service-hover-preview-container.visible {
   opacity: 1;
-  transform: translateX(-50%) translateY(0) scale(1);
+  transform: translate(20px, -50%) scale(1);
 }
 
 .preview-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+  display: block;
 }
 
 @media (max-width: 768px) {
