@@ -14,27 +14,32 @@
   height: 100%;
 }
 
-.floating-column {
+.scroll-column {
   flex: 1;
+  height: 100%;
+  position: relative;
+}
+
+/* The animating container that holds both identical groups */
+.scroll-track {
   display: flex;
   flex-direction: column;
-  gap: 180px; /* Large vertical gap between images */
-  animation: floatUp 22s linear infinite;
+  animation: scrollImages 40s linear infinite;
+  will-change: transform;
 }
 
-/* Staggered Column Logic */
-.col-1 { 
-  animation-duration: 22s; 
+/* Each group contains the same images in the same order */
+.image-group {
+  display: flex;
+  flex-direction: column;
+  gap: 180px; /* Internal gap between images */
+  padding-bottom: 180px; /* Trailing gap to ensure -50% shift is seamless */
 }
 
-.col-2 { 
-  animation-duration: 22s; 
-  padding-top: 150px; /* Offset to break the grid alignment */
-}
-
-.col-3 { 
-  animation-duration: 22s; 
-}
+/* Staggered starts using negative animation-delay */
+.col-1 .scroll-track { animation-delay: 0s; }
+.col-2 .scroll-track { animation-delay: -13s; }
+.col-3 .scroll-track { animation-delay: -26s; }
 
 .floating-image-wrapper {
   width: 100%;
@@ -51,13 +56,13 @@
 
 .floating-img {
   width: 100%;
-  max-width: 200px; /* Increased from 140px */
+  max-width: 200px;
   height: auto;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
   border-radius: 4px;
 }
 
-@keyframes floatUp {
+@keyframes scrollImages {
   0% {
     transform: translateY(0);
   }
@@ -68,7 +73,6 @@
 
 @media (max-width: 768px) {
   .floating-container {
-    height: 100%;
     padding: 0 20px;
   }
   
@@ -76,20 +80,16 @@
     gap: 20px;
   }
 
-  .floating-column {
+  .image-group {
     gap: 80px;
+    padding-bottom: 80px;
   }
 
-  /* Hide the 3rd column on mobile to keep 2 clean columns */
   .col-3 {
     display: none;
   }
 
-  .col-2 {
-    padding-top: 100px;
-  }
-
   .floating-img {
-    max-width: 130px; /* Slightly smaller for mobile */
+    max-width: 130px;
   }
 }
