@@ -14,7 +14,10 @@ import img6 from '../../assets/images/image 6.png';
 import img7 from '../../assets/images/image 7.png';
 import img8 from '../../assets/images/image 8.png';
 
-const portfolioImages = [img1, img2, img3, img4, img5, img6, img7, img8];
+const portfolioImages = [
+  img1, img2, img3, img4, img5, img6, img7, img8,
+  img2, img4, img6, img8, img1, img3, img5, img7 // Shuffled second set
+];
 
 const Home = () => {
   return (
