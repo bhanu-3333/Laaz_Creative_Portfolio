@@ -19,6 +19,11 @@ const servicesList = [
 const ServicesSection = () => {
   const [hoveredImage, setHoveredImage] = useState(null);
   const [isHovered, setIsHovered] = useState(false);
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+
+  const handleMouseMove = (e) => {
+    setMousePos({ x: e.clientX, y: e.clientY });
+  };
 
   const handleMouseEnter = (image) => {
     setHoveredImage(image);
@@ -30,8 +35,12 @@ const ServicesSection = () => {
   };
 
   return (
-    <section className="services-section">
-      <ServiceHoverPreview image={hoveredImage} isVisible={isHovered} />
+    <section className="services-section" onMouseMove={handleMouseMove}>
+      <ServiceHoverPreview 
+        image={hoveredImage} 
+        isVisible={isHovered} 
+        position={mousePos}
+      />
       
       <div className="services-container">
         <div className="services-header">
