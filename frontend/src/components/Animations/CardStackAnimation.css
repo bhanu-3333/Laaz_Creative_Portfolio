@@ -17,10 +17,10 @@
   /* Sharp rectangular corners */
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  transition: transform 0.8s cubic-bezier(0.7, 0, 0.2, 1), z-index 0.8s step-end, opacity 0.8s ease;
+  transition: transform 0.8s cubic-bezier(0.7, 0, 0.2, 1), z-index 0.8s step-end;
   background-color: #fcfcfc;
   border: 1px solid #eee;
-  will-change: transform, opacity;
+  will-change: transform;
 }
 
 .card-item img {
@@ -52,7 +52,6 @@
 /* Animation: Rotates LEFT and slides DOWNWARD diagonally */
 .card-item.moving-to-back {
   transform: translate(-40px, 80px) rotate(-15deg) rotateX(-20deg) scale(0.95);
-  opacity: 0;
   z-index: 0 !important;
 }
 
