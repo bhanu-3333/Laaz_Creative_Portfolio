@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './PortfolioSection.css';
 import arrowIcon from '../../assets/arrow.png';
 
@@ -65,6 +66,7 @@ const portfolioData = [
 ];
 
 const PortfolioSection = () => {
+  const navigate = useNavigate();
   const [offset, setOffset] = React.useState(0);
   const sectionRef = React.useRef(null);
 
@@ -83,9 +85,9 @@ const PortfolioSection = () => {
         // Use 1.0 multiplier for a true "sticky" feel during the descent
         const movement = scrolledIntoSection * 1.0;
         
-        // Target landing position centered in the 250px gap
-        // Calculated: 150px margin + 350px image height + (250px gap / 2) - (~75px offset adjustment) -> Adjusted to 620 for lower landing
-        setOffset(Math.min(movement, 620));
+        // Target landing position centered in the gap
+        // Reduced from 1200 back to 650 to prevent crossing the second image
+        setOffset(Math.min(movement, 800));
       } else {
         // Step 1: Stay fixed at the top position when entering (offset 0)
         setOffset(0);
@@ -165,7 +167,7 @@ const PortfolioSection = () => {
 
         {/* Portfolio Button */}
         <div className="portfolio-footer">
-          <button className="portfolio-btn">
+          <button className="portfolio-btn" onClick={() => navigate('/portfolio')}>
             Our Portfolio <img src={arrowIcon} alt="arrow" className="btn-arrow" />
           </button>
         </div>
