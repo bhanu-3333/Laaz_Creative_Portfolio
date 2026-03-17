@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Footer.css';
 import logo from '../../assets/logo.png';
 
@@ -9,7 +10,9 @@ const Footer = () => {
         <div className="footer-grid">
           {/* Left Column - Logo */}
           <div className="footer-brand">
-            <img src={logo} alt="Laaz Creative" className="footer-logo-img" />
+            <Link to="/">
+              <img src={logo} alt="Laaz Creative" className="footer-logo-img" />
+            </Link>
           </div>
 
           {/* Middle Column - Links */}
@@ -17,16 +20,16 @@ const Footer = () => {
             <h4 className="footer-heading">Links</h4>
             <ul className="footer-links-list">
               <li>
-                <a href="#home">Home <span>↗</span></a>
+                <Link to="/">Home <span>↗</span></Link>
               </li>
               <li>
-                <a href="#services">Services <span>↗</span></a>
+                <Link to="/services">Services <span>↗</span></Link>
               </li>
               <li>
-                <a href="#portfolio">Portfolio <span>↗</span></a>
+                <Link to="/portfolio">Portfolio <span>↗</span></Link>
               </li>
               <li>
-                <a href="#enquire">Enquire Now <span>↗</span></a>
+                <Link to="/enquire">Enquire Now <span>↗</span></Link>
               </li>
             </ul>
           </div>
