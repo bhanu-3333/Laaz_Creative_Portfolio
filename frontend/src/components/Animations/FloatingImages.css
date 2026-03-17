@@ -24,7 +24,7 @@
 .scroll-track {
   display: flex;
   flex-direction: column;
-  animation: scrollImages 40s linear infinite;
+  animation: scrollImages 80s linear infinite;
   will-change: transform;
 }
 
