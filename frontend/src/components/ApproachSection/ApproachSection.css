@@ -65,12 +65,14 @@
   gap: 15px;
   background-color: #ffffff;
   border: 1px solid #1a1a1a;
-  padding: 14px 28px;
+  padding: 12px 24px;
+  width: fit-content;
   border-radius: 0; /* Clean rectangle */
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 16px;
   font-weight: 600;
   color: #1a1a1a;
+  text-decoration: none; /* Remove link underline */
   cursor: pointer;
   transition: all 0.3s ease;
 }
