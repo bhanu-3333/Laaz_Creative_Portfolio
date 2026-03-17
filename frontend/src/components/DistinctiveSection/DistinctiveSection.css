@@ -58,6 +58,7 @@
   color: #000000;
   cursor: pointer;
   width: fit-content;
+  text-decoration: none;
   transition: all 0.3s ease;
   border-radius: 0;
   text-transform: uppercase;
