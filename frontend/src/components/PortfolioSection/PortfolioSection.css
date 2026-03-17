@@ -47,7 +47,7 @@
 .portfolio-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 0 200px; /* Expanded horizontal gap to 200px for extra clarity */
+  gap: 0 50px; /* Expanded horizontal gap to 200px for extra clarity */
   position: relative;
   z-index: 2;
   margin-top: 0; 
@@ -60,7 +60,7 @@
 
 /* Row Alignment for Col 1 and Col 3 */
 .col-1, .col-3 {
-  gap: 250px; /* Reduced vertical gap as requested */
+  gap: 80px; /* Reduced vertical gap as requested */
   margin-top: 150px; /* Aligned below header start */
 }
 
