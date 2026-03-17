@@ -42,7 +42,7 @@ const CardStackAnimation = ({ images, interval = 3000 }) => {
         return [...rest, first];
       });
       setIsTransitioning(false);
-    }, 600); // Should match the CSS transition time
+    }, 900); // Sync with CSS transition time
   };
 
   return (
