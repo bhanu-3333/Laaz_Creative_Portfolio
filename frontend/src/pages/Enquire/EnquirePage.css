@@ -1,0 +1,228 @@
+.enquire-page-wrapper {
+  background-color: #ffffff;
+  min-height: 100vh;
+}
+
+.enquire-main {
+  padding: 80px 40px;
+  background-color: #ffffff;
+}
+
+.enquire-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  border: 1px solid #dcdcdc;
+  padding: 60px;
+}
+
+.enquire-layout {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 80px;
+}
+
+/* Branding Side */
+.enquire-branding {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.enquire-logo {
+  max-width: 380px; /* Increased from 280px */
+  margin-bottom: 60px;
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 16px;
+  color: #000000;
+}
+
+.contact-icon {
+  width: 24px;
+  height: auto;
+}
+
+/* Form Side */
+.enquire-form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.form-row {
+  display: flex;
+  gap: 30px;
+}
+
+.form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-group.full-width {
+  width: 100%;
+}
+
+.form-group label {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  color: #888888;
+}
+
+.form-group .section-label {
+  color: #000000;
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.form-group input, 
+.form-group textarea {
+  border: none;
+  border-bottom: 2px solid #e0e0e0;
+  padding: 10px 0;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 16px;
+  color: #000000;
+  background: transparent;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus, 
+.form-group textarea:focus {
+  outline: none;
+  border-bottom-color: #000000;
+}
+
+.form-group textarea {
+  resize: none;
+  height: 80px;
+}
+
+/* Radio Buttons */
+.subject-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.radio-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 14px;
+  color: #666666;
+  position: relative;
+}
+
+.radio-label input {
+  position: absolute;
+  opacity: 0;
+}
+
+.radio-custom {
+  width: 14px;
+  height: 14px;
+  border: 1px solid #dcdcdc;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.radio-label input:checked + .radio-custom {
+  background-color: #000000;
+  border-color: #000000;
+}
+
+.radio-label input:checked + .radio-custom::after {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background-color: #ffffff;
+  border-radius: 50%;
+}
+
+/* Footer & Button */
+.form-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.send-btn {
+  background-color: #021a24;
+  color: #ffffff;
+  border: none;
+  padding: 18px 45px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+}
+
+.send-btn:hover:not(:disabled) {
+  background-color: #000000;
+  transform: translateY(-2px);
+}
+
+.send-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.status-msg {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.status-msg.success { color: #2e7d32; }
+.status-msg.error { color: #d32f2f; }
+
+@media (max-width: 1024px) {
+  .enquire-layout {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+  
+  .enquire-logo {
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .enquire-main {
+    padding: 60px 20px;
+  }
+  
+  .enquire-container {
+    padding: 30px;
+  }
+  
+  .form-row {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
