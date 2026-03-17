@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import logo from '../../assets/logo.png';
 import arrowIcon from '../../assets/arrow.png';
 import GrowthSection from '../../components/GrowthSection/GrowthSection';
@@ -38,9 +39,9 @@ const Home = () => {
               </div>
               
               <div className="button-wrapper">
-                <button className="contact-button">
+                <Link to="/enquire" className="contact-button">
                   Contact us <img src={arrowIcon} alt="arrow" className="button-arrow" />
-                </button>
+                </Link>
               </div>
             </div>
           </div>
