@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import CardStackAnimation from '../Animations/CardStackAnimation';
 import './ApproachSection.css';
 
@@ -17,7 +18,7 @@ const ApproachSection = () => {
       <div className="approach-container">
         {/* LEFT SIDE - Animated Card Stack */}
         <div className="approach-left">
-          <CardStackAnimation images={approachImages} interval={2500} />
+          <CardStackAnimation images={approachImages} interval={4000} />
         </div>
 
         {/* RIGHT SIDE - Content */}
@@ -35,10 +36,10 @@ const ApproachSection = () => {
             </p>
           </div>
 
-          <button className="enquire-button">
+          <Link to="/enquire" className="enquire-button">
             Enquire Now
             <img src={arrowIcon} alt="Arrow" className="btn-arrow" />
-          </button>
+          </Link>
         </div>
       </div>
     </section>
