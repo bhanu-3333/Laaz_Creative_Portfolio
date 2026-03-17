@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './DistinctiveSection.css';
 import arrowIcon from '../../assets/arrow.png';
 import brandImage from '../../assets/images/image 7.png'; // Using image 7 from the approved list
@@ -20,9 +21,9 @@ const DistinctiveSection = () => {
             Beyond products and services, they crave a deeper, more connected experience.
           </p>
           
-          <button className="distinctive-btn">
+          <Link to="/enquire" className="distinctive-btn">
             Enquire Now <img src={arrowIcon} alt="arrow" className="btn-arrow" />
-          </button>
+          </Link>
         </div>
 
         {/* Right Side - Image */}
