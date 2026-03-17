@@ -1,0 +1,148 @@
+.portfolio-page-wrapper {
+  background-color: #ffffff;
+  min-height: 100vh;
+}
+
+.portfolio-main {
+  position: relative;
+  padding: 80px 40px;
+  overflow: hidden;
+}
+
+.parallax-text-container {
+  position: absolute;
+  top: 150px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.parallax-text {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  font-size: clamp(80px, 10vw, 140px); /* Further decreased size as requested */
+  color: #000000;
+  line-height: 0.8;
+  text-transform: uppercase;
+  will-change: transform;
+}
+
+.parallax-text.port {
+  margin-left: 4vw; /* Added space from left edge */
+}
+
+.parallax-text.folio {
+  margin-right: 2vw; /* Added space from right edge */
+}
+
+.portfolio-grid-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0 80px;
+  position: relative;
+  z-index: 1;
+}
+
+.portfolio-col {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Staggered Vertical Gaps - Reduced for tighter layout */
+.col-1, .col-3 {
+  gap: 300px; /* Reduced from 500px */
+  padding-top: 150px;
+}
+
+.col-2 {
+  gap: 300px; 
+}
+
+.portfolio-card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-image {
+  width: 100%;
+  background-color: #f5f5f5;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.portfolio-card:hover .card-image img {
+  transform: scale(1.05);
+}
+
+.card-content h3 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  color: #000000;
+  margin-bottom: 4px;
+}
+
+.card-content p {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #666666;
+}
+
+/* Size Variants */
+.small .card-image {
+  height: 350px;
+}
+
+.medium .card-image {
+  height: 480px;
+}
+
+.large .card-image {
+  height: 650px;
+}
+
+.wide .card-image {
+  height: 400px;
+}
+
+@media (max-width: 1024px) {
+  .portfolio-grid-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 60px;
+  }
+  
+  .col-3 {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .portfolio-grid-container {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+  
+  .col-1, .col-2 {
+    padding-top: 0;
+    gap: 60px;
+  }
+
+  .parallax-text {
+    font-size: 80px;
+  }
+}
