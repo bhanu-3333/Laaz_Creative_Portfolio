@@ -9,7 +9,7 @@
 
 /* Ensure sections have consistent 120px padding as approved earlier */
 .services-page-content .growth-section-container {
-  padding: 20px 40px 120px; /* Reduced top padding significantly */
+  padding: 20px 40px 40px; /* Reduced top and bottom padding */
 }
 
 .services-page-content .services-section {
