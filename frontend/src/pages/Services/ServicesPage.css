@@ -1,0 +1,25 @@
+.services-page-wrapper {
+  background-color: #ffffff;
+  min-height: 100vh;
+}
+
+.services-page-content {
+  padding-top: 80px; /* Offset for fixed navbar */
+}
+
+/* Ensure sections have consistent 120px padding as approved earlier */
+.services-page-content .growth-section-container,
+.services-page-content .services-section {
+  padding: 120px 40px;
+}
+
+@media (max-width: 768px) {
+  .services-page-content {
+    padding-top: 60px;
+  }
+  
+  .services-page-content .growth-section-container,
+  .services-page-content .services-section {
+    padding: 60px 20px;
+  }
+}
