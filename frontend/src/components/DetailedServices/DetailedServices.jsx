@@ -23,7 +23,7 @@ const DetailedServices = () => {
       reverse: false
     },
     {
-      title: "Web\nApplication,\nDesign",
+      title: "Web Application,\nDesign",
       price: "999",
       description: "Our web development approach focuses on seamless user experiences and high-performance applications. We bridge the gap between complex functionality and intuitive design, ensuring that your brand remains accessible and engaging on every device. From strategy to deployment, we prioritize scalability and robust architecture to support your long-term growth.",
       images: [img3, img4],
