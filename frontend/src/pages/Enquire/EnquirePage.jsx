@@ -6,6 +6,7 @@ import logo from '../../assets/logo.png';
 import callIcon from '../../assets/images/call.png';
 import mailIcon from '../../assets/images/mail.png';
 
+
 const EnquirePage = () => {
   const [formData, setFormData] = useState({
     firstName: '',
