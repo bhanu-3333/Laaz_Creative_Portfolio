@@ -44,13 +44,6 @@ app.post('/api/enquire', async (req, res) => {
       </div>
     `
   };
-
-  
-
-
- 
-  
-
   try {
     await transporter.sendMail(mailOptions);
     res.status(200).json({ success: true, message: 'Message Sent Successfully' });
@@ -59,9 +52,6 @@ app.post('/api/enquire', async (req, res) => {
     res.status(500).json({ success: false, message: 'Failed to send message' });
   }
 });
-
-
-
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
