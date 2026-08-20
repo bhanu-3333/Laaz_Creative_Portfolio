@@ -1,7 +1,6 @@
 import React from 'react';
 import './ScrollingBanner.css';
 
-// Import icons from assets
 import sunWhite from '../../assets/images/sun_fill_white.png';
 import sunBrown from '../../assets/images/sun_fill_brown.png';
 import sunEmpty from '../../assets/images/sun_empty.png';
@@ -10,7 +9,6 @@ import sunFillEmpty from '../../assets/images/sun_fill_empty.png';
 const ScrollingBanner = () => {
   const content = "GREEN THE PLANET";
   
-  // Reusable content generator for infinite effect
   const renderBannerItems = (icons) => {
     return Array(12).fill(0).map((_, i) => {
       const currentIcon = icons[i % icons.length];
@@ -25,7 +23,6 @@ const ScrollingBanner = () => {
 
   return (
     <section className="scrolling-banner-section">
-      {/* TOP BANNER - Scrolls RIGHT */}
       <div className="banner-wrapper top-banner tilt-right">
         <div className="banner-track scroll-right">
           <div className="banner-group">
@@ -37,7 +34,6 @@ const ScrollingBanner = () => {
         </div>
       </div>
 
-      {/* BOTTOM BANNER - Scrolls LEFT */}
       <div className="banner-wrapper bottom-banner tilt-left">
         <div className="banner-track scroll-left">
           <div className="banner-group">
@@ -53,3 +49,4 @@ const ScrollingBanner = () => {
 };
 
 export default ScrollingBanner;
+

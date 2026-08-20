@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import ServiceHoverPreview from '../services/ServiceHoverPreview';
 import './ServicesSection.css';
 
-// Import service images from existing images folder
 import mobileImg from '../../assets/images/image 1 .png';
 import brandImg from '../../assets/images/image 2.png';
 import studentsImg from '../../assets/images/image 3.png';
@@ -56,7 +55,6 @@ const ServicesSection = () => {
         </div>
 
         <div className="services-grid-list">
-          {/* Left Column */}
           <div className="services-column">
             {servicesList.map((service) => (
               <div 
@@ -70,7 +68,6 @@ const ServicesSection = () => {
             ))}
           </div>
 
-          {/* Right Column (Repeated as per design) */}
           <div className="services-column">
             {servicesList.map((service) => (
               <div 
@@ -97,3 +94,4 @@ const ServicesSection = () => {
 };
 
 export default ServicesSection;
+

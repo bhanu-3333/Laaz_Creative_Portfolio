@@ -3,7 +3,6 @@ import Navbar from '../../components/Navbar/Navbar';
 import Footer from '../../components/Footer/Footer';
 import './PortfolioPage.css';
 
-// Import images
 import img1 from '../../assets/images/image 1 .png';
 import img2 from '../../assets/images/image 2.png';
 import img3 from '../../assets/images/image 3.png';
@@ -37,8 +36,6 @@ const PortfolioPage = () => {
       const scrolled = -rect.top;
 
       if (scrolled >= 0) {
-        // Single text layer that "descends" through the grid
-        // Cap adjusted for 300px gaps to stop at the third gap
         setOffset(Math.min(scrolled * 1.2, 1600)); 
       } else {
         setOffset(0);
@@ -53,7 +50,6 @@ const PortfolioPage = () => {
       <Navbar />
       
       <main className="portfolio-main" ref={mainRef}>
-        {/* Single Parallax Background Text Layer */}
         <div className="parallax-text-container">
           <div 
             className="parallax-text port"
@@ -70,7 +66,6 @@ const PortfolioPage = () => {
         </div>
 
         <div className="portfolio-grid-container">
-          {/* Column 1 */}
           <div className="portfolio-col col-1">
             {portfolioData.filter(item => item.column === 1).map(item => (
               <div key={item.id} className={`portfolio-card ${item.size}`}>
@@ -85,7 +80,6 @@ const PortfolioPage = () => {
             ))}
           </div>
 
-          {/* Column 2 */}
           <div className="portfolio-col col-2">
             {portfolioData.filter(item => item.column === 2).map(item => (
               <div key={item.id} className={`portfolio-card ${item.size}`}>
@@ -100,7 +94,6 @@ const PortfolioPage = () => {
             ))}
           </div>
 
-          {/* Column 3 */}
           <div className="portfolio-col col-3">
             {portfolioData.filter(item => item.column === 3).map(item => (
               <div key={item.id} className={`portfolio-card ${item.size}`}>
@@ -123,3 +116,4 @@ const PortfolioPage = () => {
 };
 
 export default PortfolioPage;
+

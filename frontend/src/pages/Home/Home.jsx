@@ -12,7 +12,6 @@ import Footer from '../../components/Footer/Footer';
 import FloatingImages from '../../components/Animations/FloatingImages';
 import './Home.css';
 
-// Import images
 import img1 from '../../assets/images/image 1 .png';
 import img2 from '../../assets/images/image 2.png';
 import img3 from '../../assets/images/image 3.png';
@@ -24,7 +23,7 @@ import img8 from '../../assets/images/image 8.png';
 
 const portfolioImages = [
   img1, img2, img3, img4, img5, img6, img7, img8,
-  img2, img4, img6, img8, img1, img3, img5, img7 // Shuffled second set
+  img2, img4, img6, img8, img1, img3, img5, img7
 ];
 
 const Home = () => {
@@ -64,3 +63,4 @@ const Home = () => {
 };
 
 export default Home;
+

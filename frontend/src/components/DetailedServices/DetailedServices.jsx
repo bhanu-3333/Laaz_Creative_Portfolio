@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import './DetailedServices.css';
 import arrowIcon from '../../assets/arrow.png';
 
-// Import images for services
 import img1 from '../../assets/images/image 1 .png';
 import img2 from '../../assets/images/image 2.png';
 import img3 from '../../assets/images/image 3.png';
@@ -14,6 +13,7 @@ import img7 from '../../assets/images/image 7.png';
 import img8 from '../../assets/images/image 8.png';
 
 const DetailedServices = () => {
+
   const serviceDetails = [
     {
       title: "E-Commerce,\nWeb\nApplication",

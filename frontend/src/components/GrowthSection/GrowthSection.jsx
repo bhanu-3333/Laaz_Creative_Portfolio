@@ -12,13 +12,12 @@ const services = [
   "Digital Manipulation"
 ];
 
-// Pill dimensions (must match CSS)
 const PILL_H = 46;
 const PILL_PADDING_X = 32;
-const AVG_CHAR_W = 9.5; // px per char at 17px font
+const AVG_CHAR_W = 9.5;
 const getPillW = (label) => Math.ceil(label.length * AVG_CHAR_W) + PILL_PADDING_X * 2;
 
-const WALL_T = 60; // thickness of invisible walls
+const WALL_T = 60;
 
 export default function GrowthSection() {
   const sectionRef = useRef(null);
@@ -26,12 +25,10 @@ export default function GrowthSection() {
   const canvasRef = useRef(null);
   const overlayRef = useRef(null);
 
-  // pill DOM refs for rendering
   const pillRefs = useRef([]);
 
-  // physics engine refs
   const engineRef = useRef(null);
-  const renderRef = useRef(null); // Matter.Render (hidden, just drives the loop)
+  const renderRef = useRef(null);
   const runnerRef = useRef(null);
   const bodiesRef = useRef([]);
   const droppedRef = useRef(new Set());
@@ -42,7 +39,6 @@ export default function GrowthSection() {
     services.map(() => ({ x: 0, y: -200, angle: 0, visible: false }))
   );
 
-  // ── Load Matter.js from CDN once ──────────────────────────────────────────
   useEffect(() => {
     if (window.Matter) { initPhysics(); return; }
     const script = document.createElement('script');
@@ -65,19 +61,16 @@ export default function GrowthSection() {
     const engine = M.Engine.create({ gravity: { y: 2 } });
     engineRef.current = engine;
 
-    // Invisible walls: floor, left, right
     const floor = M.Bodies.rectangle(W / 2, H + WALL_T / 2, W + 200, WALL_T, { isStatic: true, label: 'floor' });
     const wallL = M.Bodies.rectangle(-WALL_T / 2, H / 2, WALL_T, H * 2, { isStatic: true });
     const wallR = M.Bodies.rectangle(W + WALL_T / 2, H / 2, WALL_T, H * 2, { isStatic: true });
 
     M.Composite.add(engine.world, [floor, wallL, wallR]);
 
-    // Create pill bodies (not added to world yet — added on scroll)
     const bodies = services.map((svc, i) => {
       const pw = getPillW(svc);
-      // Stagger start X positions across the card width
       const startX = 80 + ((i * 113) % (W - 160));
-      const startY = -(100 + i * 60); // start above the card
+      const startY = -(100 + i * 60);
       const body = M.Bodies.rectangle(startX, startY, pw, PILL_H, {
         restitution: 0.35,
         friction: 0.6,
@@ -90,21 +83,18 @@ export default function GrowthSection() {
     });
     bodiesRef.current = bodies;
 
-    // Minimal runner — we tick manually via rAF
     const runner = M.Runner.create();
     runnerRef.current = runner;
 
     physicsReadyRef.current = true;
 
-    // Render loop
     let raf;
     let lastTime = performance.now();
     function loop(now) {
-      const delta = Math.min(now - lastTime, 50); // cap at 50ms
+      const delta = Math.min(now - lastTime, 50);
       lastTime = now;
       M.Runner.tick(runner, engine, delta);
 
-      // Sync DOM pills
       const positions = bodies.map((b, i) => ({
         x: b.position.x,
         y: b.position.y,
@@ -120,7 +110,6 @@ export default function GrowthSection() {
     return () => cancelAnimationFrame(raf);
   }
 
-  // ── Scroll handler — drop pills sequentially ──────────────────────────────
   useEffect(() => {
     const handleScroll = () => {
       if (!physicsReadyRef.current || !sectionRef.current || !matterRef.current) return;
@@ -128,14 +117,12 @@ export default function GrowthSection() {
       const rect = sectionRef.current.getBoundingClientRect();
       const vh = window.innerHeight;
 
-      // progress: 0 = section just entering viewport, 1 = section top at viewport top
       const progress = (vh - rect.top) / vh;
       if (progress <= 0) return;
 
-      // Drop pill i when progress crosses threshold_i
       services.forEach((_, i) => {
         if (droppedRef.current.has(i)) return;
-        const threshold = 0.08 + i * 0.08; // stagger thresholds
+        const threshold = 0.08 + i * 0.08;
         if (progress >= threshold) {
           droppedRef.current.add(i);
           M.Composite.add(engineRef.current.world, bodiesRef.current[i]);
@@ -177,7 +164,6 @@ export default function GrowthSection() {
           overflow: 'hidden',
         }}
       >
-        {/* Heading */}
         <div style={{ marginBottom: 60, zIndex: 10, position: 'relative' }}>
           <h2
             style={{
@@ -200,7 +186,6 @@ export default function GrowthSection() {
           </h2>
         </div>
 
-        {/* Physics canvas overlay — pills rendered as DOM elements */}
         <div
           ref={overlayRef}
           style={{
@@ -253,4 +238,4 @@ export default function GrowthSection() {
       </div>
     </section>
   );
-}
+}

@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import CardStackAnimation from '../Animations/CardStackAnimation';
 import './ApproachSection.css';
 
-// Import images for the card stack
 import img1 from '../../assets/images/image 1 .png';
 import img2 from '../../assets/images/image 2.png';
 import img3 from '../../assets/images/image 3.png';
@@ -16,12 +15,10 @@ const ApproachSection = () => {
   return (
     <section className="approach-section">
       <div className="approach-container">
-        {/* LEFT SIDE - Animated Card Stack */}
         <div className="approach-left">
           <CardStackAnimation images={approachImages} interval={4000} />
         </div>
 
-        {/* RIGHT SIDE - Content */}
         <div className="approach-right">
           <h2 className="approach-heading">
             Our <span className="highlight">Approach</span>
@@ -47,3 +44,4 @@ const ApproachSection = () => {
 };
 
 export default ApproachSection;
+

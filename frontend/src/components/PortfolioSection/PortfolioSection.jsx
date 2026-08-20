@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import './PortfolioSection.css';
 import arrowIcon from '../../assets/arrow.png';
 
-// Import existing images from assets
 import img1 from '../../assets/images/image 1 .png';
 import img2 from '../../assets/images/image 2.png';
 import img3 from '../../assets/images/image 3.png';
@@ -12,7 +11,6 @@ import img5 from '../../assets/images/image 5.png';
 import img6 from '../../assets/images/image 6.png';
 
 const portfolioData = [
-  // Column 1 - 2 Items
   {
     id: 1,
     title: "MoMu Moblie application",
@@ -29,7 +27,6 @@ const portfolioData = [
     size: "medium",
     column: 1
   },
-  // Column 2 - 2 Items (Top)
   {
     id: 2,
     title: "Vegan Moblie application",
@@ -46,7 +43,6 @@ const portfolioData = [
     size: "wide",
     column: 2
   },
-  // Column 3 - 2 Items
   {
     id: 3,
     title: "Interior decor, landing page",
@@ -77,19 +73,11 @@ const PortfolioSection = () => {
       const rect = sectionRef.current.getBoundingClientRect();
       const sectionTop = rect.top;
 
-      // Step 1 & 2: Only start moving downward relative to the section 
-      // when the section's top reaches or passes the top of the viewport (0)
       if (sectionTop <= 0) {
-        // Calculate distance scrolled into the section
         const scrolledIntoSection = -sectionTop;
-        // Use 1.0 multiplier for a true "sticky" feel during the descent
         const movement = scrolledIntoSection * 1.0;
-        
-        // Target landing position centered in the gap
-        // Reduced from 1200 back to 650 to prevent crossing the second image
         setOffset(Math.min(movement, 800));
       } else {
-        // Step 1: Stay fixed at the top position when entering (offset 0)
         setOffset(0);
       }
     };
@@ -101,7 +89,6 @@ const PortfolioSection = () => {
   return (
     <section className="portfolio-section" ref={sectionRef}>
       <div className="portfolio-container">
-        {/* Animated Heading - Positioned at top, behind grid */}
         <div className="portfolio-heading-wrapper">
           <div 
             className="heading-part port" 
@@ -117,9 +104,7 @@ const PortfolioSection = () => {
           </div>
         </div>
 
-        {/* Portfolio Grid */}
         <div className="portfolio-grid">
-          {/* Column 1 */}
           <div className="portfolio-column col-1">
             {portfolioData.filter(item => item.column === 1).map(item => (
               <div key={item.id} className={`portfolio-item ${item.size}`}>
@@ -134,7 +119,6 @@ const PortfolioSection = () => {
             ))}
           </div>
 
-          {/* Column 2 */}
           <div className="portfolio-column col-2">
             {portfolioData.filter(item => item.column === 2).map(item => (
               <div key={item.id} className={`portfolio-item ${item.size}`}>
@@ -149,7 +133,6 @@ const PortfolioSection = () => {
             ))}
           </div>
 
-          {/* Column 3 */}
           <div className="portfolio-column col-3">
             {portfolioData.filter(item => item.column === 3).map(item => (
               <div key={item.id} className={`portfolio-item ${item.size}`}>
@@ -165,7 +148,6 @@ const PortfolioSection = () => {
           </div>
         </div>
 
-        {/* Portfolio Button */}
         <div className="portfolio-footer">
           <button className="portfolio-btn" onClick={() => navigate('/portfolio')}>
             Our Portfolio <img src={arrowIcon} alt="arrow" className="btn-arrow" />
@@ -177,3 +159,4 @@ const PortfolioSection = () => {
 };
 
 export default PortfolioSection;
+
